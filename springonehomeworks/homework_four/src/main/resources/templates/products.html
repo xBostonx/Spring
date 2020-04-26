@@ -7,18 +7,18 @@
 </head>
 <body>
 
-<h1>Our Products</h1>
-
 <nav th:replace="fragments/navbar.html :: navbar"/>
 
-<p>
-    <form method="get" th:action="@{/product}">
-        <label for="minPrice">minPrice</label><input type="number" id="minPrice" name="minPrice" th:value="${minPrice}">
-        <label for="maxPrice">maxPrice</label><input type="number" id="maxPrice" name="maxPrice" th:value="${maxPrice}">
-        <button type="submit">Apply</button>
-    </form>
-</p>
+<h1>Our Products</h1>
 
+
+<p>
+<form method="get" th:action="@{/product}">
+    <label for="minPrice">minPrice</label><input type="number" id="minPrice" name="minPrice" th:value="${minPrice}">
+    <label for="maxPrice">maxPrice</label><input type="number" id="maxPrice" name="maxPrice" th:value="${maxPrice}">
+    <button type="submit">Apply</button>
+</form>
+</p>
 
 
 <table>

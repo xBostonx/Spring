@@ -38,7 +38,7 @@ public class PersonService {
 
     @Transactional(readOnly = true)
     public Page<Person> findAll(Pageable pageable) {
-       return personRepository.findAll(pageable);
+        return personRepository.findAll(pageable);
     }
 
     public Page<Person> findAllByAgeBetween(Optional<Integer> min, Optional<Integer> max, Pageable pageable) {

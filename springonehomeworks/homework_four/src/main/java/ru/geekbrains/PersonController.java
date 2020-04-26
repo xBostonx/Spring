@@ -44,7 +44,7 @@ public class PersonController {
 
     @GetMapping("/form")
     public String formPerson(@RequestParam(value = "id") Optional<Long> personId,
-            Model model) {
+                             Model model) {
         if (personId.isPresent()) {
             model.addAttribute("person", personService.findById(personId.get()));
         } else {

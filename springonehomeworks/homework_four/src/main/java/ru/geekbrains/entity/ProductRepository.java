@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 
 @Repository
-public interface ProductRepository extends JpaRepository <Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Page<Product> findAllByPriceGreaterThanEqual(BigDecimal min, Pageable pageable);
 
