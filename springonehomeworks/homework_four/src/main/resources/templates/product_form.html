@@ -1,0 +1,20 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product form</title>
+    <link rel="stylesheet" th:href="@{/resources/style.css}">
+</head>
+
+<body>
+<nav th:replace="fragments/navbar.html :: navbar"/>
+<h1>Product</h1>
+
+<form th:action="@{/product/form}" th:object="${product}" method="post">
+    <p>Title:</p>
+    <p><input type="text" th:field="*{name}"></p>
+    <p>Price:</p>
+    <p><input type="text" th:field="*{price}"></p>
+    <button type="submit">Add</button>
+</form>
+
+</body>
+</html>
