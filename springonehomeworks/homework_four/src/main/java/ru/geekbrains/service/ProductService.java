@@ -22,10 +22,16 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    @Transactional
-    public void save(Product product) {
-        productRepository.save(product);
-    }
+//    Методы не нужны в данном ДЗ
+//    @Transactional
+//    public void insert(Product product) {
+//        productRepository.save(product);
+//    }
+//
+//    @Transactional
+//    public void update(Product product) {
+//        productRepository.save(product);
+//    }
 
     @Transactional(readOnly = true)
     public Optional<Product> findById(Long id) {
@@ -40,11 +46,6 @@ public class ProductService {
     @Transactional(readOnly = true)
     public Page<Product> findAll(Pageable pageable) {
         return productRepository.findAll(pageable);
-    }
-
-    @Transactional
-    public void deleteById(long id) {
-        productRepository.deleteById(id);
     }
 
     public Page<Product> findAllByPriceBetween(Optional<BigDecimal> min, Optional<BigDecimal> max, Pageable pageable) {

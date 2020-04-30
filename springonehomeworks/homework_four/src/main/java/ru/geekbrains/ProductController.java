@@ -1,19 +1,14 @@
 package ru.geekbrains;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.geekbrains.entity.Product;
 import ru.geekbrains.service.ProductService;
 
-import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.Optional;
 
@@ -41,26 +36,4 @@ public class ProductController {
         model.addAttribute("maxPrice", maxPrice.orElse(null));
         return "products";
     }
-
-    @GetMapping("/form")
-    public String formProduct(@RequestParam(value = "id") Optional<Long> productId, Model model) {
-        if (productId.isPresent()) {
-            model.addAttribute("product", productService.findById(productId.get()));
-        } else {
-            model.addAttribute("product", new Product());
-        }
-        return "product_form";
-    }
-
-    @PostMapping("/form")
-    public String newProduct(@Valid Product product, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
-            return "product_form";
-        }
-
-        productService.save(product);
-        return "redirect:/product";
-    }
-
-
 }
