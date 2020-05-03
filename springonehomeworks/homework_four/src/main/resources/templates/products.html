@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Catalog</title>
@@ -11,7 +12,7 @@
 
 <h1>Our Products</h1>
 
-<a th:href="@{/product/form}">Add new product</a>
+<a sec:authorize="hasAnyRole('MANAGER','ADMIN')" th:href="@{/product/form}">Add new product</a>
 
 <p>
 <form method="get" th:action="@{/product}">
@@ -30,7 +31,9 @@
 
 
     <tr th:if="${productPage.hasContent()}" th:each="product : ${productPage.content}">
-        <td th:text="${product.name}">Title</td>
+        <td>
+            <a th:text="${product.name}" th:href="@{/product/{id}(id = ${product.id})}">Title</a>
+        </td>
         <td th:text="${product.price}">Price</td>
     </tr>
 

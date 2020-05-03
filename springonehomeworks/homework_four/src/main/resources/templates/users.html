@@ -1,0 +1,35 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User</title>
+    <link rel="stylesheet" th:href="@{/resources/style.css}">
+</head>
+
+<body>
+
+<nav th:replace="fragments/navbar.html :: navbar"/>
+
+<h1>User list</h1>
+
+<a th:href="@{/user/form}">Create user</a>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+    </tr>
+
+    <tr th:unless="${users.isEmpty()}" th:each="user : ${users}">
+        <td th:text="${user.id}">1</td>
+        <td>
+            <a th:text="${user.username}" th:href="@{/user/{id}(id = ${user.id})}">Username</a>
+        </td>
+    </tr>
+
+    <tr th:if="${users.isEmpty()}">
+        <td colspan="4" class="empty_table">Nothing to show</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
