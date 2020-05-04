@@ -9,8 +9,9 @@
 
 <nav th:replace="fragments/navbar.html :: navbar"/>
 
-<h1>Person</h1>
-
+<div class="header_main">
+    <h1>Person</h1>
+</div>
 <form th:action="@{/user/form}" th:object="${user}" method="post">
     <input th:type="hidden" th:field="*{id}">
     <p>Username:</p>

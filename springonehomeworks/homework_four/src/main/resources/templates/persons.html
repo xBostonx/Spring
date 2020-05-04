@@ -9,8 +9,9 @@
 
 <nav th:replace="fragments/navbar.html :: navbar"/>
 
-<h1>Person list</h1>
-
+<div class="header_main">
+    <h1>Person list</h1>
+</div>
 <a th:href="@{/person/form}">Create person</a>
 <p>
 <form method="get" th:action="@{/person}">

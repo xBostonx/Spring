@@ -67,7 +67,11 @@ public class SecurityConfiguration {
                     .antMatchers("/user/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
-                    .formLogin(Customizer.withDefaults());
+                    .formLogin()
+                    .loginPage("/login")
+                    .loginProcessingUrl("/authenticate")
+                    .permitAll();
+//                    .formLogin(Customizer.withDefaults());
         }
     }
 }

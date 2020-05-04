@@ -10,8 +10,9 @@
 
 <nav th:replace="fragments/navbar.html :: navbar"/>
 
-<h1>Our Products</h1>
-
+<div class="header_main">
+    <h1>Our Products</h1>
+</div>
 <a sec:authorize="hasAnyRole('MANAGER','ADMIN')" th:href="@{/product/form}">Add new product</a>
 
 <p>

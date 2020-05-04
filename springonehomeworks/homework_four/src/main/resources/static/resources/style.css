@@ -65,3 +65,23 @@ th {
 .empty_table {
     text-align: center;
 }
+
+.header_main {
+    margin-top: 60px;
+}
+
+.logout_btn {
+    float: left;
+    display: block;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.logout_btn:hover {
+    background: white;
+    color: black;
+}

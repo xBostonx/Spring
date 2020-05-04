@@ -6,8 +6,9 @@
 
 <body>
 <nav th:replace="fragments/navbar.html :: navbar"/>
-<h1>Product</h1>
-
+<div class="header_main">
+    <h1>Product</h1>
+</div>
 <form th:action="@{/product/form}" th:object="${product}" method="post">
     <p>Title:</p>
     <p><input type="text" th:field="*{name}"></p>
