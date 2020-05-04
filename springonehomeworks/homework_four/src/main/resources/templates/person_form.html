@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Person form</title>
+    <link rel="stylesheet" th:href="@{/resources/style.css}">
+</head>
+
+<body>
+
+<nav th:replace="fragments/navbar.html :: navbar"/>
+
+<div class="header_main">
+    <h1>Person</h1>
+</div>
+<form th:action="@{/person/form}" th:object="${person}" method="post">
+    <p>First Name:</p>
+    <p><input type="text" th:field="*{firstName}"></p>
+    <p>Last Name:</p>
+    <p><input type="text" th:field="*{lastName}"></p>
+    <p>Age:</p>
+    <p><input type="number" th:field="*{age}"></p>
+    <p>Email</p>
+    <p>
+        <input type="text" th:field="*{email}">
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+    </p>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

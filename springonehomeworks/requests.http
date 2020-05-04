@@ -1,0 +1,52 @@
+GET http://localhost:8080/app/api/v01/product/3/id
+
+###
+GET http://localhost:8080/app/api/v01/product/14/id
+
+###
+GET http://localhost:8080/app/api/v01/product/all
+
+###
+POST http://localhost:8080/app/api/v01/product
+Content-Type: application/json
+
+  {
+    "name": "USB 3.0 Adapter",
+    "price": 5.99
+  }
+
+###
+GET http://localhost:8080/app/api/v01/product/
+
+###
+DELETE http://localhost:8080/app/api/v01/product/36/id
+
+###
+PUT http://localhost:8080/app/api/v01/product
+Content-Type: application/json
+
+{
+  "id": 14,
+  "name": "Gamepad Nintendo Switch",
+  "price": 189.00
+}
+
+###
+
+#
+#//Запрос для поиска по id
+#curl "http://localhost:8080/app/api/v01/product/14/id"
+#
+#//Запрос для поиска всех позиций
+#curl "http://localhost:8080/app/api/v01/product/all"
+#
+###
+//Запрос для добавления новой позиции
+curl -d "{\"name\":\"Keyboard HP B 55\",\"price:\":\"149.99\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/app/api/v01/product
+
+###
+
+
+
+
+

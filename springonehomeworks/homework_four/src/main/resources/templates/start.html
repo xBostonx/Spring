@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Electronic Supermarket</title>
+    <link rel="stylesheet" th:href="@{/resources/style.css}">
+</head>
+<body>
+
+<nav th:replace="fragments/navbar.html :: navbar"/>
+
+<div class="header_main">
+    <h1>Electronic Supermarket</h1>
+
+    <h2 th:text="${welcomeText}"></h2>
+</div>
+
+</body>
+</html>
