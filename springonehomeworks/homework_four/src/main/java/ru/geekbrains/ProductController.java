@@ -31,7 +31,7 @@ public class ProductController {
                              Model model) {
         model.addAttribute("activePage", "Products");
         model.addAttribute("productPage", productService.findAllByPriceBetween(minPrice, maxPrice,
-                PageRequest.of(page.orElse(1) -1, size.orElse(5))));
+                PageRequest.of(page.orElse(1) - 1, size.orElse(5))));
         model.addAttribute("minPrice", minPrice.orElse(null));
         model.addAttribute("maxPrice", maxPrice.orElse(null));
         return "products";

@@ -21,7 +21,7 @@
     <p>Email</p>
     <p>
         <input type="text" th:field="*{email}">
-        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
     </p>
     <button type="submit">Save</button>
 </form>
